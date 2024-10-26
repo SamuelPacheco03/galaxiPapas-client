@@ -17,13 +17,14 @@ export const login =
   (email, password) => async (dispatch) => {
     dispatch(SET_AUTH_LOADING());
     dispatch(REMOVE_ERROR_MESSAGE());
+    
     const config = {
       headers: {
         "Content-Type": "application/json",
-
       },
-      withCredentials: true
+      withCredentials: true, // Mover withCredentials fuera de headers
     };
+
     const body = JSON.stringify({
       username: email,
       password
@@ -59,6 +60,7 @@ export const login =
       dispatch(REMOVE_AUTH_LOADING());
     }
   };
+
 
 //Acción para registrar un usuario
 export const signUp =
