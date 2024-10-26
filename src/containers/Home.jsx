@@ -54,7 +54,7 @@ function Home({ session }) {
                 ¡Cada empaque puede convertir tus antojos en increíbles premios galácticos!
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                {session && <>
+                {!session && <>
                   <Link to='/sign-in'>
                     <button className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out flex items-center justify-center shadow-lg text-lg">
                       <LogIn className="mr-2 h-5 w-5" />
