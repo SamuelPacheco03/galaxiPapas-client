@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
 import Home from './containers/Home'
-import Login from "./containers/auth/login";
-import Register from "./containers/auth/register";
-import AdminLogin from "./containers/admin/AdminLogin";
-import AdminEntries from "./containers/admin/AdminEntries";
-import CodeEntry from "./containers/CodeEntry";
+import Login from "./containers/auth/Login.jsx";
+import Register from "./containers/auth/Register.jsx";
+import AdminLogin from "./containers/admin/AdminLogin.jsx";
+import AdminEntries from "./containers/admin/AdminEntries.jsx";
+import CodeEntry from "./containers/CodeEntry.jsx";
 import useAuth from "./hooks/authHook";
 import { ConnectedProtectedAuthRoute, ConnectedProtectedRoute } from "./utils/ProtectedRoute";
 
