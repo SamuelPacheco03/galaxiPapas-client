@@ -169,7 +169,9 @@ export const logout = () => async (dispatch) => {
   dispatch(REMOVE_ERROR_MESSAGE());
   
   try {
-    const res = await api.get(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/logout`);
+    const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/logout`, {
+      withCredentials: true,
+    });
     if (res.status === 200) {
       dispatch(LOGOUT());
     }

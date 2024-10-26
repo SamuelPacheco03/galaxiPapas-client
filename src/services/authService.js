@@ -14,8 +14,8 @@ api.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        const res = await api.post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/refresh-token`);
-        
+        const res = await api.post('/auth/refresh-token');
+        // const res = await api.post(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/refresh-token`);
         if (res.status === 200) {
           return api(originalRequest);
         }
