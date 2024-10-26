@@ -167,18 +167,9 @@ export const signUpAdmin =
 export const logout = () => async (dispatch) => {
   dispatch(SET_AUTH_LOADING());
   dispatch(REMOVE_ERROR_MESSAGE());
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    withCredentials: true,
-  };
-
-  try {
-    const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/logout`,{
-      config
-    });
   
+  try {
+    const res = await api.get(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/logout`);
     if (res.status === 200) {
       dispatch(LOGOUT());
     }
