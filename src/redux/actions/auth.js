@@ -175,7 +175,7 @@ export const logout = () => async (dispatch) => {
   };
 
   try {
-    const res = await axios.get(`/auth/logout`,{
+    const res = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URL}/auth/logout`,{
       config
     });
   
