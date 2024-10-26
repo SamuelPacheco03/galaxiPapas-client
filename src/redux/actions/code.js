@@ -8,7 +8,6 @@ import {
 } from "../reducers/messages";
 
 export const createCodes = () => async (dispatch) => {
-    dispatch(CLEAR_MODAL_MESSAGE());
     dispatch(SET_LOADING());
     let message = null;
     let type_message = 'success'
@@ -41,7 +40,6 @@ export const createCodes = () => async (dispatch) => {
 
 export const getCodes = (page = 1, used = undefined, prize = undefined) => async (dispatch) => {
     dispatch(SET_LOADING());
-    dispatch(CLEAR_MODAL_MESSAGE());
     let message = null;
     let type_message = 'success';
   
@@ -82,7 +80,6 @@ export const getCodes = (page = 1, used = undefined, prize = undefined) => async
 
 export const sendCode = (code) => async (dispatch) => {
     dispatch(SET_LOADING());
-    dispatch(CLEAR_MODAL_MESSAGE());
     let message = null;
     let type_message = 'success'
     try {
@@ -124,7 +121,7 @@ export const sendCode = (code) => async (dispatch) => {
 
 export const getUserLogs = () => async (dispatch) => {
     dispatch(SET_LOADING());
-    dispatch(CLEAR_MODAL_MESSAGE());
+    
     let message = null;
     let type_message = 'success'
     try {
