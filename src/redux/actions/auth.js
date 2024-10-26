@@ -22,7 +22,7 @@ export const login =
       headers: {
         "Content-Type": "application/json",
       },
-      withCredentials: true, // Mover withCredentials fuera de headers
+      withCredentials: true,
     };
 
     const body = JSON.stringify({
@@ -167,8 +167,18 @@ export const signUpAdmin =
 export const logout = () => async (dispatch) => {
   dispatch(SET_AUTH_LOADING());
   dispatch(REMOVE_ERROR_MESSAGE());
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  };
+
   try {
-    const res = await api.get(`/auth/logout`);
+    const res = await axios.get(`/auth/logout`,{
+      config
+    });
+  
     if (res.status === 200) {
       dispatch(LOGOUT());
     }
